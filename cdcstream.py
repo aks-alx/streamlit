@@ -33,7 +33,12 @@ if archivo is not None:
         x = df[[col_x]]
         y = df[[col_y]]
         modelo = entrenar_modelo(x, y)
-        nuevo_x = st.number_input(f"Valor para {col_x}", min_value=float(df[col_x].min()), max_value=float(df[col_x].max()), step=1.0)
+        nuevo_x = st.number_input(
+            f"Valor para {col_x}",
+            min_value=int(df[col_x].min()),
+            step=1,
+            format="%d"
+        )
         if st.button("Predecir"): 
             prediccion = modelo.predict([[nuevo_x]])
             st.write(f"Predicción para {col_y}: {prediccion[0][0]:.2f}")
