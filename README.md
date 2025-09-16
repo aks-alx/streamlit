@@ -18,16 +18,21 @@ Esta aplicación permite realizar una regresión lineal sobre datos subidos en f
 - streamlit
 - pandas
 - scikit-learn
+- matplotlib
 
 Instala los paquetes necesarios con:
 ```powershell
-pip install streamlit pandas scikit-learn
+pip install streamlit pandas scikit-learn matplotlib
 ```
 
+## Visualización y métricas
+La app muestra un gráfico de dispersión con la línea de regresión y las métricas del modelo (R², MAE, MSE) después de cada predicción.
+
 ## Estructura del CSV
-El archivo debe tener al menos estas dos columnas:
+El archivo debe tener al menos dos columnas numéricas. Puedes seleccionar cualquier par de columnas para realizar la predicción.
+Ejemplo:
 ```csv
-Tecnicos_asignados,Tiempo_resolucion_horas
+X,Y
 3,5.2
 2,7.1
 ...
